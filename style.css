@@ -1,0 +1,42 @@
+/* Tarmarda GPV Skin - Clean Start */
+
+html,
+body {
+    background: transparent !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+.controller.custom {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 750px !important;
+    height: 630px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 750px 630px !important;
+}
+
+.custom.disconnected {
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 750px 630px !important;
+}
+
+/* Hide all GPV parts for the first clean body test */
+.custom .triggers,
+.custom .bumpers,
+.custom .quadrant,
+.custom .arrows,
+.custom .abxy,
+.custom .sticks,
+.custom .dpad {
+    display: none !important;
+}
