@@ -1,0 +1,66 @@
+/* Tarmarda GPV Skin - V3 Body + View/Menu Clean */
+
+html,
+body {
+    background: transparent !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Main controller body */
+.controller.custom {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 750px !important;
+    height: 630px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 750px 630px !important;
+}
+
+/* Hide GPV parts we are not adding yet */
+.custom .triggers,
+.custom .bumpers,
+.custom .quadrant,
+.custom .arrows,
+.custom .abxy,
+.custom .sticks,
+.custom .dpad {
+    display: none !important;
+}
+
+/* View button */
+body::before {
+    content: "";
+    position: fixed;
+    left: calc(50% - 75px);
+    top: calc(50% - 140px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
+
+/* Menu button */
+body::after {
+    content: "";
+    position: fixed;
+    left: calc(50% + 42px);
+    top: calc(50% - 140px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
