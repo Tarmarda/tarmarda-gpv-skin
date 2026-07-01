@@ -1,4 +1,4 @@
-/* Tarmarda GPV Skin - Clean Body Test */
+/* Tarmarda GPV Skin - Body + View/Menu */
 
 html,
 body {
@@ -32,7 +32,7 @@ body {
     background-size: 750px 630px !important;
 }
 
-/* Hide all GPV parts for the first clean test */
+/* Hide all GPV parts we are not adding yet */
 .custom .triggers,
 .custom .bumpers,
 .custom .quadrant,
@@ -41,4 +41,34 @@ body {
 .custom .sticks,
 .custom .dpad {
     display: none !important;
+}
+
+/* View button overlay */
+.controller.custom::before {
+    content: "";
+    position: absolute;
+    left: 300px;
+    top: 175px;
+    width: 33px;
+    height: 33px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png") !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 10;
+}
+
+/* Menu button overlay */
+.controller.custom::after {
+    content: "";
+    position: absolute;
+    left: 417px;
+    top: 175px;
+    width: 33px;
+    height: 33px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png") !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 10;
 }
