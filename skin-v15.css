@@ -1,0 +1,89 @@
+/* Tarmarda GPV Skin - V15 Smaller Body + Smaller ABXY + Y Lower */
+
+html,
+body {
+    background: transparent !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Main controller body + ABXY overlays */
+.controller.custom {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 750px !important;
+    height: 630px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+
+    background-image:
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
+
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat !important;
+
+    background-size:
+        62px 70px,
+        62px 70px,
+        62px 70px,
+        62px 70px,
+        715px 600px !important;
+
+    background-position:
+        541px 80px,
+        587px 140px,
+        491px 140px,
+        539px 208px,
+        center !important;
+}
+
+/* Hide GPV parts we are not adding yet */
+.custom .triggers,
+.custom .bumpers,
+.custom .quadrant,
+.custom .arrows,
+.custom .abxy,
+.custom .sticks,
+.custom .dpad {
+    display: none !important;
+}
+
+/* View button */
+body::before {
+    content: "";
+    position: fixed;
+    left: calc(50% - 72px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
+
+/* Menu button */
+body::after {
+    content: "";
+    position: fixed;
+    left: calc(50% + 39px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
