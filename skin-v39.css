@@ -1,0 +1,228 @@
+/* =========================================
+   TARMARDA GPV SKIN
+   Full build paste version
+   Current focus:
+   - Body
+   - ABXY buttons
+   - View / Menu buttons
+   - D-pad underlay
+   - D-pad buttons
+   ========================================= */
+
+/* =========================================
+   CONTROLLER BODY
+   ========================================= */
+.controller.custom {
+  position: relative !important;
+  width: 750px !important;
+  height: 630px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") no-repeat 0 0 !important;
+  background-size: 750px 630px !important;
+}
+
+.custom.disconnected {
+  width: 750px !important;
+  height: 630px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") no-repeat 0 0 !important;
+  background-size: 750px 630px !important;
+}
+
+.custom.disconnected div {
+  display: none !important;
+}
+
+/* =========================================
+   HIDE UNUSED DEFAULT LAYERS FOR NOW
+   ========================================= */
+.custom .triggers,
+.custom .bumpers,
+.custom .sticks,
+.custom .quadrant {
+  display: none !important;
+}
+
+/* =========================================
+   VIEW / MENU BUTTONS
+   ========================================= */
+.custom .back,
+.custom .select {
+  position: absolute !important;
+  left: 329px !important;
+  top: 213px !important;
+  width: 28px !important;
+  height: 28px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .start {
+  position: absolute !important;
+  left: 421px !important;
+  top: 213px !important;
+  width: 28px !important;
+  height: 28px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+/* pressed states */
+.custom .back.pressed,
+.custom .select.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png") no-repeat center center !important;
+  background-size: contain !important;
+  opacity: 0.9 !important;
+}
+
+.custom .start.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png") no-repeat center center !important;
+  background-size: contain !important;
+  opacity: 0.9 !important;
+}
+
+/* =========================================
+   ABXY BUTTONS
+   ========================================= */
+.custom .a {
+  position: absolute !important;
+  left: 548px !important;
+  top: 256px !important;
+  width: 66px !important;
+  height: 66px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .b {
+  position: absolute !important;
+  left: 594px !important;
+  top: 208px !important;
+  width: 66px !important;
+  height: 66px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .x {
+  position: absolute !important;
+  left: 501px !important;
+  top: 208px !important;
+  width: 66px !important;
+  height: 66px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .y {
+  position: absolute !important;
+  left: 548px !important;
+  top: 157px !important;
+  width: 66px !important;
+  height: 66px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+/* pressed states */
+.custom .a.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a-pressed.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .b.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b-pressed.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .x.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x-pressed.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .y.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y-pressed.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+/* =========================================
+   DPAD UNDERLAY
+   ========================================= */
+.custom .dpad {
+  position: absolute !important;
+  left: 196px !important;
+  top: 268px !important;
+  width: 170px !important;
+  height: 170px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-underlay-v2.png") no-repeat center center !important;
+  background-size: 170px 170px !important;
+}
+
+/* =========================================
+   DPAD BUTTONS
+   NOTE:
+   keeping arrow directions correct
+   only cleaned placement a bit
+   ========================================= */
+.custom .dpad.up {
+  position: absolute !important;
+  left: 251px !important;
+  top: 278px !important;
+  width: 54px !important;
+  height: 54px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-up.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .dpad.down {
+  position: absolute !important;
+  left: 251px !important;
+  top: 364px !important;
+  width: 54px !important;
+  height: 54px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-down.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .dpad.left {
+  position: absolute !important;
+  left: 214px !important;
+  top: 321px !important;
+  width: 54px !important;
+  height: 54px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-left.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+.custom .dpad.right {
+  position: absolute !important;
+  left: 289px !important;
+  top: 321px !important;
+  width: 54px !important;
+  height: 54px !important;
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-right.png") no-repeat center center !important;
+  background-size: contain !important;
+}
+
+/* pressed states */
+.custom .dpad.up.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-up.png") no-repeat center center !important;
+  background-size: contain !important;
+  filter: brightness(1.15) !important;
+}
+
+.custom .dpad.down.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-down.png") no-repeat center center !important;
+  background-size: contain !important;
+  filter: brightness(1.15) !important;
+}
+
+.custom .dpad.left.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-left.png") no-repeat center center !important;
+  background-size: contain !important;
+  filter: brightness(1.15) !important;
+}
+
+.custom .dpad.right.pressed {
+  background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-right.png") no-repeat center center !important;
+  background-size: contain !important;
+  filter: brightness(1.15) !important;
+}
