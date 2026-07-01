@@ -1,0 +1,166 @@
+/* Tarmarda GPV Skin - V45 Stick Hole Fill Test */
+
+html,
+body {
+    background: transparent !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Main controller body + overlays */
+.controller.custom {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 750px !important;
+    height: 630px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+
+    background-image:
+        /* tiny dark strip to hide white seam on bottom of top dpad */
+        linear-gradient(
+            90deg,
+            rgba(3,7,11,0) 0%,
+            rgba(3,7,11,0.78) 18%,
+            rgba(3,7,11,0.92) 50%,
+            rgba(3,7,11,0.78) 82%,
+            rgba(3,7,11,0) 100%
+        ),
+
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-up.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-right.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-down.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-left.png"),
+
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-underlay-v2.png"),
+
+        /* stick caps */
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/stick.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/stick.png"),
+
+        /* dark stick well covers behind stick caps */
+        radial-gradient(
+            circle,
+            rgba(4,8,12,0.98) 0 54%,
+            rgba(0,220,255,0.22) 66%,
+            rgba(0,220,255,0.08) 74%,
+            rgba(0,220,255,0) 84%
+        ),
+        radial-gradient(
+            circle,
+            rgba(4,8,12,0.98) 0 54%,
+            rgba(0,220,255,0.22) 66%,
+            rgba(0,220,255,0.08) 74%,
+            rgba(0,220,255,0) 84%
+        ),
+
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
+
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat !important;
+
+    background-size:
+        58px 7px,    /* dpad seam cover */
+
+        64px 64px,   /* dpad up */
+        64px 64px,   /* dpad right image stays in bottom slot - DO NOT SWAP */
+        64px 64px,   /* dpad down image stays in right slot - DO NOT SWAP */
+        64px 64px,   /* dpad left */
+
+        180px 180px, /* dpad underlay v2 */
+
+        112px 112px, /* left stick cap */
+        112px 112px, /* right stick cap */
+
+        142px 142px, /* left stick well cover */
+        142px 142px, /* right stick well cover */
+
+        62px 70px,   /* Y */
+        62px 70px,   /* B */
+        62px 70px,   /* X */
+        62px 70px,   /* A */
+        715px 600px !important;
+
+    background-position:
+        249px 294px, /* dpad seam cover */
+
+        246px 237px, /* dpad up */
+        243px 343px, /* dpad right image stays in bottom slot - DO NOT SWAP */
+        289px 286px, /* dpad down image stays in right slot */
+        197px 297px, /* dpad left */
+
+        184px 236px, /* dpad underlay v2 */
+
+        100px 116px, /* left stick cap */
+        409px 266px, /* right stick cap */
+
+        85px 101px,  /* left stick well cover */
+        394px 251px, /* right stick well cover */
+
+        541px 78px,  /* Y */
+        588px 141px, /* B */
+        492px 141px, /* X */
+        541px 206px, /* A */
+        center !important;
+}
+
+/* Hide GPV parts we are not using yet */
+.custom .triggers,
+.custom .bumpers,
+.custom .quadrant,
+.custom .arrows,
+.custom .abxy,
+.custom .sticks,
+.custom .dpad {
+    display: none !important;
+}
+
+/* View button */
+body::before {
+    content: "";
+    position: fixed;
+    left: calc(50% - 72px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
+
+/* Menu button */
+body::after {
+    content: "";
+    position: fixed;
+    left: calc(50% + 39px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
