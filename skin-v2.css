@@ -1,4 +1,4 @@
-/* Tarmarda GPV Skin - V2 Body + View/Menu Debug */
+/* Tarmarda GPV Skin - V2 Body + View/Menu Clean */
 
 html,
 body {
@@ -24,7 +24,7 @@ body {
     background-size: 750px 630px !important;
 }
 
-/* Hide all GPV parts we are not adding yet */
+/* Hide GPV parts we are not adding yet */
 .custom .triggers,
 .custom .bumpers,
 .custom .quadrant,
@@ -35,7 +35,7 @@ body {
     display: none !important;
 }
 
-/* View button - fixed overlay */
+/* View button */
 body::before {
     content: "";
     position: fixed;
@@ -48,12 +48,9 @@ body::before {
     background-size: contain;
     background-position: center;
     z-index: 9999;
-
-    /* temporary red outline so we can see it */
-    outline: 2px solid red;
 }
 
-/* Menu button - fixed overlay */
+/* Menu button */
 body::after {
     content: "";
     position: fixed;
@@ -66,7 +63,4 @@ body::after {
     background-size: contain;
     background-position: center;
     z-index: 9999;
-
-    /* temporary red outline so we can see it */
-    outline: 2px solid red;
 }
