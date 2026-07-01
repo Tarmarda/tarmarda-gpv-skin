@@ -1,0 +1,124 @@
+/* Tarmarda GPV Skin - V32 Dpad White Gap Cover */
+
+html,
+body {
+    background: transparent !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Main controller body + overlays */
+.controller.custom {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 750px !important;
+    height: 630px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+
+    background-image:
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-up.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-right.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-down.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-left.png"),
+
+        /* extra dark cover behind the dpad to hide the white gaps */
+        linear-gradient(90deg, rgba(4,8,12,0.98), rgba(8,14,20,0.98), rgba(4,8,12,0.98)),
+        linear-gradient(180deg, rgba(4,8,12,0.98), rgba(8,14,20,0.98), rgba(4,8,12,0.98)),
+        radial-gradient(circle, rgba(5,8,14,0.98) 0 62%, rgba(0,255,255,0.20) 70%, rgba(0,255,255,0) 80%),
+
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
+
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat !important;
+
+    background-size:
+        60px 60px,   /* dpad up */
+        60px 60px,   /* dpad right image stays in bottom slot */
+        60px 60px,   /* dpad down image stays in right slot */
+        60px 60px,   /* dpad left */
+
+        178px 70px,  /* horizontal dpad cover */
+        76px 184px,  /* vertical dpad cover */
+        150px 150px, /* center glow/base cover */
+
+        62px 70px,   /* Y */
+        62px 70px,   /* B */
+        62px 70px,   /* X */
+        62px 70px,   /* A */
+        715px 600px !important;
+
+    background-position:
+        250px 242px, /* dpad up */
+        245px 345px, /* dpad right image stays in bottom slot - DO NOT SWAP */
+        291px 299px, /* dpad down image stays in right slot - DO NOT SWAP */
+        199px 299px, /* dpad left */
+
+        188px 295px, /* horizontal dpad cover */
+        241px 235px, /* vertical dpad cover */
+        200px 257px, /* center glow/base cover */
+
+        541px 78px,  /* Y */
+        588px 141px, /* B */
+        492px 141px, /* X */
+        541px 206px, /* A */
+        center !important;
+}
+
+/* Hide GPV parts we are not using yet */
+.custom .triggers,
+.custom .bumpers,
+.custom .quadrant,
+.custom .arrows,
+.custom .abxy,
+.custom .sticks,
+.custom .dpad {
+    display: none !important;
+}
+
+/* View button */
+body::before {
+    content: "";
+    position: fixed;
+    left: calc(50% - 72px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
+
+/* Menu button */
+body::after {
+    content: "";
+    position: fixed;
+    left: calc(50% + 39px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
