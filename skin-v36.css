@@ -1,115 +1,188 @@
-/* Tarmarda GPV Skin - V36 Clean Dpad Underlay */
+/* Tarmarda GPV Skin v36
+   Full paste-all version
+   Focus: body + view/menu + ABXY + cleaner D-pad spacing
+*/
 
-html,
-body {
-    background: transparent !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-}
-
-/* Main controller body + overlays */
 .controller.custom {
-    position: fixed !important;
-    left: 50% !important;
-    top: 50% !important;
-    width: 750px !important;
-    height: 630px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: translate(-50%, -50%) !important;
-
-    background-image:
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-up.png"),
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-right.png"),
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-down.png"),
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-left.png"),
-
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-underlay.png"),
-
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y.png"),
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b.png"),
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x.png"),
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a.png"),
-        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
-
-    background-repeat:
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat !important;
-
-    background-size:
-        60px 60px,   /* dpad up */
-        60px 60px,   /* dpad right image stays in bottom slot - DO NOT SWAP */
-        60px 60px,   /* dpad down image stays in right slot - DO NOT SWAP */
-        60px 60px,   /* dpad left */
-
-        158px 158px, /* dpad underlay */
-
-        62px 70px,   /* Y */
-        62px 70px,   /* B */
-        62px 70px,   /* X */
-        62px 70px,   /* A */
-        715px 600px !important;
-
-    background-position:
-        248px 239px, /* dpad up */
-        245px 345px, /* dpad right image stays in bottom slot - DO NOT SWAP */
-        291px 299px, /* dpad down image stays in right slot - DO NOT SWAP */
-        199px 299px, /* dpad left */
-
-        195px 247px, /* dpad underlay */
-
-        541px 78px,  /* Y */
-        588px 141px, /* B */
-        492px 141px, /* X */
-        541px 206px, /* A */
-        center !important;
+    position: relative;
+    width: 620px;
+    height: 530px;
+    background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") no-repeat 0 0;
+    background-size: 620px 530px;
 }
 
-/* Hide GPV parts we are not using yet */
+.custom.disconnected {
+    background: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") no-repeat 0 0;
+    background-size: 620px 530px;
+}
+
+/* Hide unfinished parts for now */
 .custom .triggers,
 .custom .bumpers,
-.custom .quadrant,
-.custom .arrows,
-.custom .abxy,
 .custom .sticks,
-.custom .dpad {
+.custom .quadrant {
     display: none !important;
 }
 
-/* View button */
-body::before {
-    content: "";
-    position: fixed;
-    left: calc(50% - 72px);
-    top: calc(50% - 133px);
-    width: 40px;
-    height: 40px;
-    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png");
-    background-repeat: no-repeat;
+/* -------------------------------------------------
+   VIEW + MENU
+------------------------------------------------- */
+.custom .back,
+.custom .start {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 182px;
     background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    z-index: 9999;
 }
 
-/* Menu button */
-body::after {
-    content: "";
-    position: fixed;
-    left: calc(50% + 39px);
-    top: calc(50% - 133px);
-    width: 40px;
-    height: 40px;
-    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png");
-    background-repeat: no-repeat;
+.custom .back {
+    left: 275px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view-clean.png");
+}
+
+.custom .start {
+    left: 378px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu-clean.png");
+}
+
+/* Hide default text/icons inside them */
+.custom .back:after,
+.custom .start:after {
+    display: none !important;
+    content: none !important;
+}
+
+/* -------------------------------------------------
+   ABXY
+------------------------------------------------- */
+.custom .abxy {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 620px;
+    height: 530px;
+}
+
+.custom .abxy .button {
+    position: absolute;
+    width: 58px;
+    height: 58px;
     background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    z-index: 9999;
+}
+
+/* Final-ish ABXY placement */
+.custom .abxy .y {
+    left: 507px;
+    top: 68px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y.png");
+}
+
+.custom .abxy .x {
+    left: 467px;
+    top: 112px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x.png");
+}
+
+.custom .abxy .b {
+    left: 547px;
+    top: 112px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b.png");
+}
+
+.custom .abxy .a {
+    left: 507px;
+    top: 156px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a.png");
+}
+
+/* Pressed ABXY */
+.custom .abxy .y.pressed {
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y-pressed.png");
+}
+
+.custom .abxy .x.pressed {
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x-pressed.png");
+}
+
+.custom .abxy .b.pressed {
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b-pressed.png");
+}
+
+.custom .abxy .a.pressed {
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a-pressed.png");
+}
+
+/* -------------------------------------------------
+   D-PAD
+   Cleaner spacing / less overlap
+------------------------------------------------- */
+.custom .arrows {
+    position: absolute;
+    left: 198px;
+    top: 240px;
+    width: 128px;
+    height: 128px;
+
+    /* dark underlay to hide white gaps better */
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-underlay-v2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 128px 128px;
+}
+
+.custom .arrows .button {
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Up */
+.custom .arrows .up {
+    left: 42px;
+    top: 2px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-up.png");
+}
+
+/* Left */
+.custom .arrows .left {
+    left: 1px;
+    top: 43px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-left.png");
+}
+
+/* Right */
+.custom .arrows .right {
+    left: 83px;
+    top: 43px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-right.png");
+}
+
+/* Down */
+.custom .arrows .down {
+    left: 42px;
+    top: 84px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-down.png");
+}
+
+/* Optional simple pressed effect */
+.custom .arrows .button.pressed {
+    filter: brightness(1.18);
+}
+
+/* -------------------------------------------------
+   Hide any leftover default internals we don't want showing
+------------------------------------------------- */
+.custom .fstick,
+.custom .sstick,
+.custom .trigger-button,
+.custom .bumper-button {
+    display: none !important;
 }
