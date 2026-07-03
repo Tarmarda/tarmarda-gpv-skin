@@ -1,0 +1,407 @@
+/* Tarmarda GPV Skin - V64 LT/RT Fixed Overlay Position Pass
+   Based on V63:
+   - keeps moving sticks
+   - keeps body/background-layer method
+   - keeps View/Menu on body::before/body::after
+   - moves LT/RT assets off controller::before/after
+   - uses html::before/html::after so the trigger art can actually be moved upward
+*/
+
+html,
+body {
+  background: transparent !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/* =================================================
+   LT / RT REAL ASSET OVERLAY
+   V64 change:
+   - no longer using .controller.custom::before/after
+   - now using html::before/html::after
+   - this should force the trigger art to sit higher above the controller
+   ================================================= */
+
+/* LT asset */
+html::before {
+  content: "";
+
+  position: fixed !important;
+
+  left: calc(50% - 266px) !important;
+  top: calc(50% - 395px) !important;
+
+  width: 145px !important;
+  height: 174px !important;
+
+  background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/lt.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: contain !important;
+
+  filter:
+    drop-shadow(0 0 4px rgba(0, 0, 0, 0.95))
+    drop-shadow(0 0 10px rgba(0, 220, 255, 0.50))
+    drop-shadow(0 0 12px rgba(255, 0, 180, 0.25)) !important;
+
+  pointer-events: none !important;
+  z-index: 9998 !important;
+}
+
+/* RT asset */
+html::after {
+  content: "";
+
+  position: fixed !important;
+
+  left: calc(50% + 121px) !important;
+  top: calc(50% - 395px) !important;
+
+  width: 145px !important;
+  height: 174px !important;
+
+  background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/rt.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: contain !important;
+
+  filter:
+    drop-shadow(0 0 4px rgba(0, 0, 0, 0.95))
+    drop-shadow(0 0 10px rgba(0, 220, 255, 0.50))
+    drop-shadow(0 0 12px rgba(255, 0, 180, 0.25)) !important;
+
+  pointer-events: none !important;
+  z-index: 9998 !important;
+}
+
+/* Disable old controller pseudo trigger layers so they do not double up */
+.controller.custom::before,
+.controller.custom::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* =================================================
+   MAIN CONTROLLER BODY + STATIC BACKGROUND ASSETS
+   ================================================= */
+
+.controller.custom {
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+
+  width: 750px !important;
+  height: 630px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(3, 7, 11, 0) 0%,
+      rgba(3, 7, 11, 0.78) 18%,
+      rgba(3, 7, 11, 0.92) 50%,
+      rgba(3, 7, 11, 0.78) 82%,
+      rgba(3, 7, 11, 0) 100%
+    ),
+
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-up.png"),
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-right.png"),
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-down.png"),
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-left.png"),
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-underlay-v2.png"),
+
+    radial-gradient(
+      circle,
+      rgba(5, 9, 13, 0.98) 0 50%,
+      rgba(5, 9, 13, 0.92) 62%,
+      rgba(5, 9, 13, 0.40) 74%,
+      rgba(5, 9, 13, 0.00) 86%
+    ),
+    radial-gradient(
+      ellipse,
+      rgba(5, 9, 13, 0.99) 0 52%,
+      rgba(5, 9, 13, 0.94) 64%,
+      rgba(5, 9, 13, 0.42) 76%,
+      rgba(5, 9, 13, 0.00) 88%
+    ),
+
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y.png"),
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b.png"),
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x.png"),
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a.png"),
+
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/lb.png"),
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/rb.png"),
+
+    radial-gradient(
+      ellipse,
+      rgba(3, 7, 11, 0.88) 0 48%,
+      rgba(0, 220, 255, 0.18) 62%,
+      rgba(255, 0, 180, 0.12) 75%,
+      rgba(3, 7, 11, 0) 88%
+    ),
+    radial-gradient(
+      ellipse,
+      rgba(3, 7, 11, 0.88) 0 48%,
+      rgba(0, 220, 255, 0.18) 62%,
+      rgba(255, 0, 180, 0.12) 75%,
+      rgba(3, 7, 11, 0) 88%
+    ),
+
+    url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat !important;
+
+  background-size:
+    58px 7px,
+    64px 64px,
+    64px 64px,
+    64px 64px,
+    64px 64px,
+    180px 180px,
+    144px 144px,
+    152px 172px,
+    62px 70px,
+    62px 70px,
+    62px 70px,
+    62px 70px,
+    110px 42px,
+    110px 42px,
+    150px 95px,
+    150px 95px,
+    715px 600px !important;
+
+  background-position:
+    249px 294px,
+    246px 237px,
+    243px 343px,
+    289px 286px,
+    197px 297px,
+    184px 236px,
+    96px 101px,
+    398px 238px,
+    541px 78px,
+    588px 141px,
+    492px 141px,
+    541px 206px,
+    154px 20px,
+    486px 20px,
+    124px 34px,
+    476px 34px,
+    center !important;
+}
+
+/* =================================================
+   HIDE GPV PARTS WE ARE NOT USING DIRECTLY
+   ================================================= */
+
+.custom .bumpers,
+.custom .quadrant,
+.custom .arrows,
+.custom .abxy,
+.custom .dpad {
+  display: none !important;
+}
+
+/* =================================================
+   REAL GPV MOVING STICKS
+   ================================================= */
+
+.custom .sticks {
+  display: block !important;
+
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+
+  width: 750px !important;
+  height: 630px !important;
+
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
+
+.custom .sticks .stick {
+  display: block !important;
+
+  position: absolute !important;
+
+  width: 112px !important;
+  height: 112px !important;
+
+  background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/stick.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+
+  border: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Left moving stick */
+.custom .sticks .stick.left,
+.custom .sticks .stick:nth-child(1) {
+  left: 112px !important;
+  top: 116px !important;
+}
+
+/* Right moving stick */
+.custom .sticks .stick.right,
+.custom .sticks .stick:nth-child(2) {
+  left: 421px !important;
+  top: 266px !important;
+}
+
+/* Stick press */
+.custom .sticks .stick.pressed {
+  background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/stick-pressed.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+}
+
+/* =================================================
+   LIVE TRIGGER GLOW
+   V64:
+   - moved upward to sit underneath the new html LT/RT overlay
+   ================================================= */
+
+.custom .triggers {
+  display: block !important;
+
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+
+  width: 750px !important;
+  height: 630px !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  pointer-events: none !important;
+  z-index: 9997 !important;
+}
+
+/* Trigger glow layer */
+.custom .triggers .trigger,
+.custom .triggers .trigger-button {
+  display: block !important;
+
+  position: absolute !important;
+
+  width: 120px !important;
+  height: 150px !important;
+  top: -78px !important;
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255, 0, 180, 0.82) 0%,
+      rgba(255, 0, 180, 0.42) 42%,
+      rgba(0, 220, 255, 0.25) 68%,
+      rgba(0, 0, 0, 0) 100%
+    ) !important;
+
+  border-radius: 42px 42px 20px 20px !important;
+
+  box-shadow:
+    0 0 22px rgba(255, 0, 180, 0.68),
+    0 0 16px rgba(0, 220, 255, 0.48),
+    inset 0 0 18px rgba(255, 0, 180, 0.28) !important;
+
+  border: 2px solid rgba(255, 0, 180, 0.65) !important;
+
+  opacity: 0;
+}
+
+/* Left trigger possible selectors */
+.custom .triggers .trigger.left,
+.custom .triggers .left.trigger,
+.custom .triggers .trigger-button.left,
+.custom .triggers .left.trigger-button {
+  left: 126px !important;
+}
+
+/* Right trigger possible selectors */
+.custom .triggers .trigger.right,
+.custom .triggers .right.trigger,
+.custom .triggers .trigger-button.right,
+.custom .triggers .right.trigger-button {
+  left: 514px !important;
+}
+
+/* If GPV uses pressed/active classes instead of analog opacity */
+.custom .triggers .trigger.pressed,
+.custom .triggers .trigger.active,
+.custom .triggers .trigger-button.pressed,
+.custom .triggers .trigger-button.active {
+  opacity: 1 !important;
+  transform: scale(0.98) !important;
+}
+
+/* =================================================
+   VIEW / MENU BUTTONS
+   Kept on body pseudo-elements.
+   ================================================= */
+
+/* View button */
+body::before {
+  content: "";
+
+  position: fixed;
+
+  left: calc(50% - 72px);
+  top: calc(50% - 133px);
+
+  width: 40px;
+  height: 40px;
+
+  background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  z-index: 9999;
+}
+
+/* Menu button */
+body::after {
+  content: "";
+
+  position: fixed;
+
+  left: calc(50% + 39px);
+  top: calc(50% - 133px);
+
+  width: 40px;
+  height: 40px;
+
+  background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  z-index: 9999;
+}
