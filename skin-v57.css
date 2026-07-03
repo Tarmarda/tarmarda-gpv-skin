@@ -1,0 +1,195 @@
+/* Tarmarda GPV Skin - V57 Real Bumpers + Triggers Test */
+
+html,
+body {
+    background: transparent !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Main controller body + overlays */
+.controller.custom {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 750px !important;
+    height: 630px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+
+    background-image:
+        /* tiny dark strip to hide white seam on bottom of top dpad */
+        linear-gradient(
+            90deg,
+            rgba(3,7,11,0) 0%,
+            rgba(3,7,11,0.78) 18%,
+            rgba(3,7,11,0.92) 50%,
+            rgba(3,7,11,0.78) 82%,
+            rgba(3,7,11,0) 100%
+        ),
+
+        /* DPAD */
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-up.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-right.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-down.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-left.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-underlay-v2.png"),
+
+        /* STICKS */
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/stick.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/stick.png"),
+
+        /* stick dark fills */
+        radial-gradient(
+            ellipse,
+            rgba(6,8,12,0.95) 0%,
+            rgba(6,8,12,0.92) 58%,
+            rgba(6,8,12,0.55) 78%,
+            rgba(6,8,12,0) 100%
+        ),
+        radial-gradient(
+            ellipse,
+            rgba(6,8,12,0.98) 0%,
+            rgba(6,8,12,0.96) 62%,
+            rgba(6,8,12,0.65) 82%,
+            rgba(6,8,12,0) 100%
+        ),
+
+        /* ABXY */
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a.png"),
+
+        /* TOP CONTROLS */
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/lb.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/rb.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/lt.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/rt.png"),
+
+        /* BODY */
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
+
+    background-repeat:
+        no-repeat, /* seam cover */
+
+        no-repeat, /* dpad up */
+        no-repeat, /* dpad right */
+        no-repeat, /* dpad down */
+        no-repeat, /* dpad left */
+        no-repeat, /* dpad underlay */
+
+        no-repeat, /* left stick */
+        no-repeat, /* right stick */
+
+        no-repeat, /* left stick fill */
+        no-repeat, /* right stick fill */
+
+        no-repeat, /* Y */
+        no-repeat, /* B */
+        no-repeat, /* X */
+        no-repeat, /* A */
+
+        no-repeat, /* LB */
+        no-repeat, /* RB */
+        no-repeat, /* LT */
+        no-repeat, /* RT */
+
+        no-repeat !important; /* body */
+
+    background-size:
+        58px 7px,    /* dpad seam cover */
+
+        64px 64px,   /* dpad up */
+        64px 64px,   /* dpad right image stays in bottom slot - DO NOT SWAP */
+        64px 64px,   /* dpad down image stays in right slot */
+        64px 64px,   /* dpad left */
+        180px 180px, /* dpad underlay */
+
+        112px 112px, /* left stick cap */
+        112px 112px, /* right stick cap */
+
+        122px 122px, /* left stick fill */
+        114px 138px, /* right stick fill */
+
+        62px 70px,   /* Y */
+        62px 70px,   /* B */
+        62px 70px,   /* X */
+        62px 70px,   /* A */
+
+        110px 42px,  /* LB */
+        110px 42px,  /* RB */
+        126px 54px,  /* LT */
+        126px 54px,  /* RT */
+
+        715px 600px !important; /* body */
+
+    background-position:
+        249px 294px, /* dpad seam cover */
+
+        246px 237px, /* dpad up */
+        243px 343px, /* dpad right image stays in bottom slot - DO NOT SWAP */
+        289px 286px, /* dpad down image stays in right slot */
+        197px 297px, /* dpad left */
+        184px 236px, /* dpad underlay */
+
+        112px 116px, /* left stick cap */
+        421px 266px, /* right stick cap */
+
+        106px 111px, /* left stick fill */
+        420px 253px, /* right stick fill */
+
+        541px 78px,  /* Y */
+        588px 141px, /* B */
+        492px 141px, /* X */
+        541px 206px, /* A */
+
+        154px 20px,  /* LB */
+        486px 20px,  /* RB */
+        144px 48px,  /* LT */
+        476px 48px,  /* RT */
+
+        center !important;
+}
+
+/* Hide GPV parts we are not using directly */
+.custom .triggers,
+.custom .bumpers,
+.custom .quadrant,
+.custom .arrows,
+.custom .abxy,
+.custom .sticks,
+.custom .dpad {
+    display: none !important;
+}
+
+/* View button */
+body::before {
+    content: "";
+    position: fixed;
+    left: calc(50% - 72px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
+
+/* Menu button */
+body::after {
+    content: "";
+    position: fixed;
+    left: calc(50% + 39px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
