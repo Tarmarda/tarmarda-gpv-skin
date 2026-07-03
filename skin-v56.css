@@ -1,0 +1,329 @@
+/* Tarmarda GPV Skin - V56 Bumper Trigger Full Restore Test */
+
+html,
+body {
+    background: transparent !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Main controller body + static overlays */
+.controller.custom {
+    position: fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 750px !important;
+    height: 630px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -50%) !important;
+
+    background-image:
+        /* tiny dark strip to hide white seam on bottom of top dpad */
+        linear-gradient(
+            90deg,
+            rgba(3,7,11,0) 0%,
+            rgba(3,7,11,0.78) 18%,
+            rgba(3,7,11,0.92) 50%,
+            rgba(3,7,11,0.78) 82%,
+            rgba(3,7,11,0) 100%
+        ),
+
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-up.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-right.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-down.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-left.png"),
+
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/dpad-underlay-v2.png"),
+
+        /* stick well fills */
+        radial-gradient(
+            circle,
+            rgba(5,9,13,0.98) 0 50%,
+            rgba(5,9,13,0.92) 62%,
+            rgba(5,9,13,0.40) 74%,
+            rgba(5,9,13,0.00) 86%
+        ),
+        radial-gradient(
+            ellipse,
+            rgba(5,9,13,0.99) 0 52%,
+            rgba(5,9,13,0.94) 64%,
+            rgba(5,9,13,0.42) 76%,
+            rgba(5,9,13,0.00) 88%
+        ),
+
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/y.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/b.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/x.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/a.png"),
+        url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/body.png") !important;
+
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat !important;
+
+    background-size:
+        58px 7px,    /* dpad seam cover */
+
+        64px 64px,   /* dpad up */
+        64px 64px,   /* dpad right image stays in bottom slot - DO NOT SWAP */
+        64px 64px,   /* dpad down image stays in right slot - DO NOT SWAP */
+        64px 64px,   /* dpad left */
+
+        180px 180px, /* dpad underlay v2 */
+
+        144px 144px, /* left stick well fill */
+        152px 172px, /* right stick well fill - taller oval */
+
+        62px 70px,   /* Y */
+        62px 70px,   /* B */
+        62px 70px,   /* X */
+        62px 70px,   /* A */
+        715px 600px !important;
+
+    background-position:
+        249px 294px, /* dpad seam cover */
+
+        246px 237px, /* dpad up */
+        243px 343px, /* dpad right image stays in bottom slot - DO NOT SWAP */
+        289px 286px, /* dpad down image stays in right slot - DO NOT SWAP */
+        197px 297px, /* dpad left */
+
+        184px 236px, /* dpad underlay v2 */
+
+        96px 101px,  /* left stick well fill */
+        398px 238px, /* right stick well fill */
+
+        541px 78px,  /* Y */
+        588px 141px, /* B */
+        492px 141px, /* X */
+        541px 206px, /* A */
+        center !important;
+}
+
+/* Hide GPV parts we are not using yet */
+.custom .quadrant,
+.custom .arrows,
+.custom .abxy,
+.custom .dpad {
+    display: none !important;
+}
+
+/* Allow real GPV sticks to show and move */
+.custom .sticks {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 750px !important;
+    height: 630px !important;
+    pointer-events: none !important;
+    z-index: 10 !important;
+}
+
+/* Base stick cap style */
+.custom .sticks .stick {
+    display: block !important;
+    position: absolute !important;
+    width: 112px !important;
+    height: 112px !important;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/stick.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+    border: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+}
+
+/* Left stick position */
+.custom .sticks .stick.left,
+.custom .sticks .stick:nth-child(1) {
+    left: 112px !important;
+    top: 116px !important;
+}
+
+/* Right stick position */
+.custom .sticks .stick.right,
+.custom .sticks .stick:nth-child(2) {
+    left: 421px !important;
+    top: 266px !important;
+}
+
+/* Stick pressed state */
+.custom .sticks .stick.pressed {
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/stick-pressed.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+}
+
+/* =================================================
+   BUMPERS / TRIGGERS TEST
+   ================================================= */
+
+/* Containers */
+.custom .bumpers,
+.custom .triggers {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 750px !important;
+    height: 630px !important;
+    pointer-events: none !important;
+}
+
+/* Bumpers sit above body */
+.custom .bumpers {
+    z-index: 30 !important;
+}
+
+/* Triggers sit above bumpers */
+.custom .triggers {
+    z-index: 31 !important;
+}
+
+/* Static trigger base shapes.
+   These stay visible so we can place them.
+   The real trigger element below should glow on input. */
+.custom .triggers::before,
+.custom .triggers::after {
+    content: "";
+    position: absolute !important;
+    top: 22px !important;
+    width: 108px !important;
+    height: 44px !important;
+    background: rgba(255, 0, 140, 0.13) !important;
+    border: 2px solid rgba(255, 0, 140, 0.58) !important;
+    border-radius: 18px 18px 10px 10px !important;
+    box-shadow:
+        0 0 10px rgba(255, 0, 140, 0.20),
+        inset 0 0 10px rgba(255, 0, 140, 0.08) !important;
+}
+
+.custom .triggers::before {
+    left: 120px !important;
+}
+
+.custom .triggers::after {
+    left: 522px !important;
+}
+
+/* Bumper base style */
+.custom .bumpers .bumper {
+    display: block !important;
+    position: absolute !important;
+    top: 61px !important;
+    width: 142px !important;
+    height: 46px !important;
+    background: rgba(0, 220, 255, 0.12) !important;
+    border: 2px solid rgba(0, 220, 255, 0.70) !important;
+    box-shadow:
+        0 0 10px rgba(0, 220, 255, 0.30),
+        inset 0 0 10px rgba(0, 220, 255, 0.10) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Left bumper */
+.custom .bumpers .left.bumper {
+    left: 104px !important;
+    border-radius: 18px 24px 8px 8px !important;
+}
+
+/* Right bumper */
+.custom .bumpers .right.bumper {
+    left: 504px !important;
+    border-radius: 24px 18px 8px 8px !important;
+}
+
+/* Bumper response */
+.custom .bumpers .bumper.pressed,
+.custom .bumpers .bumper.active {
+    background: rgba(0, 240, 255, 0.35) !important;
+    border-color: rgba(0, 240, 255, 1) !important;
+    box-shadow:
+        0 0 18px rgba(0, 240, 255, 0.65),
+        inset 0 0 16px rgba(0, 240, 255, 0.20) !important;
+    transform: scale(0.98) !important;
+}
+
+/* Trigger live input overlays.
+   IMPORTANT: no opacity: 1 here, because GPV may control trigger input with opacity. */
+.custom .triggers .trigger {
+    display: block !important;
+    position: absolute !important;
+    top: 22px !important;
+    width: 108px !important;
+    height: 44px !important;
+    background: rgba(255, 0, 140, 0.55) !important;
+    border: 2px solid rgba(255, 0, 140, 1) !important;
+    border-radius: 18px 18px 10px 10px !important;
+    box-shadow:
+        0 0 18px rgba(255, 0, 140, 0.60),
+        inset 0 0 16px rgba(255, 0, 140, 0.20) !important;
+    visibility: visible !important;
+}
+
+/* Left trigger */
+.custom .triggers .left.trigger {
+    left: 120px !important;
+}
+
+/* Right trigger */
+.custom .triggers .right.trigger {
+    left: 522px !important;
+}
+
+/* Trigger response if GPV uses pressed/active instead of opacity */
+.custom .triggers .trigger.pressed,
+.custom .triggers .trigger.active {
+    background: rgba(255, 0, 140, 0.65) !important;
+    border-color: rgba(255, 0, 140, 1) !important;
+    box-shadow:
+        0 0 22px rgba(255, 0, 140, 0.80),
+        inset 0 0 18px rgba(255, 0, 140, 0.25) !important;
+    transform: scale(0.98) !important;
+}
+
+/* View button */
+body::before {
+    content: "";
+    position: fixed;
+    left: calc(50% - 72px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/view.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
+
+/* Menu button */
+body::after {
+    content: "";
+    position: fixed;
+    left: calc(50% + 39px);
+    top: calc(50% - 133px);
+    width: 40px;
+    height: 40px;
+    background-image: url("https://cdn.jsdelivr.net/gh/Tarmarda/tarmarda-gpv-skin@main/assets/menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 9999;
+}
